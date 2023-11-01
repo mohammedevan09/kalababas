@@ -96,8 +96,11 @@ const ResultsCart = ({ item }) => {
           ) : (
             <>
               {item?.description + ' '}
-              <span className="text-black">
-                {'.'.repeat(93 - item?.description?.length)}
+              <span
+                className="text-[transparent]"
+                style={{ userSelect: 'none' }}
+              >
+                {'0'.repeat(97 - item?.description?.length)}
               </span>
             </>
           )}

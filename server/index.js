@@ -25,7 +25,13 @@ mongoose
     console.log('Disconnected', err)
   })
 
-app.use(cors())
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+    methods: 'GET,POST,PUT,DELETE',
+    credentials: true,
+  })
+)
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
