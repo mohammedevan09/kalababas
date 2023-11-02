@@ -24,10 +24,6 @@ const Header = ({ className }) => {
 
   const shouldHideHeader = pathname.includes('/admin-panel')
 
-  if (shouldHideHeader) {
-    return null
-  }
-
   useEffect(() => {
     if (!shouldHideHeader) {
       const controlNavbar = () => {
@@ -69,6 +65,10 @@ const Header = ({ className }) => {
       return () => window.removeEventListener('resize', handleResize)
     }
   }, [shouldHideHeader])
+
+  if (shouldHideHeader) {
+    return null
+  }
 
   const handleNavigation = () => {
     setShowNav((prev) => !prev)
