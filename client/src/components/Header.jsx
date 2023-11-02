@@ -15,6 +15,9 @@ const Header = ({ className }) => {
   const [show, setShow] = useState('top')
   const [lastScrollY, setLastScrollY] = useState(0)
   const [search, setSearch] = useState('')
+  const [showNav, setShowNav] = useState(false)
+  const [iconSize, setIconSize] = useState(0)
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
 
   const router = useRouter()
   const pathname = usePathname()
@@ -45,15 +48,6 @@ const Header = ({ className }) => {
     }
   }, [lastScrollY])
 
-  const [showNav, setShowNav] = useState(false)
-
-  const handleNavigation = () => {
-    setShowNav((prev) => !prev)
-  }
-
-  const [iconSize, setIconSize] = useState(0)
-  const [isSmallScreen, setIsSmallScreen] = useState(false)
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1280) {
@@ -71,6 +65,10 @@ const Header = ({ className }) => {
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
+
+  const handleNavigation = () => {
+    setShowNav((prev) => !prev)
+  }
 
   const links = [
     {

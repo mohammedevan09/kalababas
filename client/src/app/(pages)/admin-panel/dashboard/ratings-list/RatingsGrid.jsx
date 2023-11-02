@@ -28,7 +28,7 @@ const RatingsGrid = ({ data, totalCount }) => {
       router.push('/admin-panel/login')
       toast.error('You are not admin!')
     }
-  }, [userInfo, token])
+  }, [userInfo, token, router])
 
   const [paginationModel, setPaginationModel] = useState({
     pageSize: 10,
@@ -134,6 +134,7 @@ const RatingsGrid = ({ data, totalCount }) => {
             flex: 0.1,
             getActions: (params) => [
               <GridActionsCellItem
+                key={params.row._id}
                 icon={<MdDeleteOutline className="!text-[#ff7b92]" size={22} />}
                 label="Delete"
                 onClick={() => deleteData(params.id)}

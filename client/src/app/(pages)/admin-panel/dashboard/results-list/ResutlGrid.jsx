@@ -29,7 +29,7 @@ const ResultGrid = ({ data, totalCount }) => {
       router.push('/admin-panel/login')
       toast.error('You are not admin!')
     }
-  }, [userInfo, token])
+  }, [userInfo, token, router])
 
   const [paginationModel, setPaginationModel] = useState({
     pageSize: 10,

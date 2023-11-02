@@ -52,7 +52,7 @@ const Footer = () => {
           <div className="sm:w-1/2 w-full text-justify">
             <h2 className="md:text-3xl text-2xl font-semibold">About US</h2>
             <div className="grid items-center justify-left">
-              Welcome to KalababaS Crypto World! Founded by the dedicated
+              {`Welcome to KalababaS Crypto World! Founded by the dedicated
               KalababaS Team, we are your gateway to the dynamic realm of
               cryptocurrency investing and trading. With a shared passion for
               financial empowerment, we've embarked on this journey to bring the
@@ -66,7 +66,7 @@ const Footer = () => {
               with the tools, knowledge, and support you need to confidently
               explore the ever-evolving landscape of cryptocurrencies. Join us
               as we pave the way for a future where financial empowerment knows
-              no boundaries.
+              no boundaries.`}
             </div>
           </div>
           <div className="h-full break-word sm:w-1/2 w-full grid sm:justify-center justify-start items-center">

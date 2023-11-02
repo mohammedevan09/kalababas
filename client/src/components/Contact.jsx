@@ -1,6 +1,6 @@
-import { AiFillInstagram, AiTwotonePhone } from 'react-icons/ai'
+import { AiTwotonePhone } from 'react-icons/ai'
 import { FaAddressCard } from 'react-icons/fa'
-import { BsFacebook, BsTwitter, BsLinkedin, BsGithub } from 'react-icons/bs'
+import { BsFacebook, BsTwitter, BsTelegram } from 'react-icons/bs'
 import { BiLogoGmail } from 'react-icons/bi'
 
 const page = () => {

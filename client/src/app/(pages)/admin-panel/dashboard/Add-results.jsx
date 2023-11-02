@@ -1,6 +1,7 @@
 'use client'
 
 import { createResult, uploadResultsImage } from '@/api/resultsApi'
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 // import { createCategory, uploadCategoryImage } from '@/api/categoryApi'
 import { useEffect, useState } from 'react'
@@ -24,7 +25,7 @@ const AddNewResults = () => {
       router.push('/admin-panel/login')
       toast.error('You are not admin!')
     }
-  }, [userInfo, token])
+  }, [userInfo, token, router])
 
   const onImageChange = (e) => {
     e.preventDefault()
@@ -119,10 +120,12 @@ const AddNewResults = () => {
                     className="absolute top-2 right-2 red-important"
                     size={28}
                   />
-                  <img
+                  <Image
                     src={URL.createObjectURL(image)}
                     alt="images"
-                    className="object-cover"
+                    width={400}
+                    height={400}
+                    className="object cover"
                   />
                 </div>
               ) : (

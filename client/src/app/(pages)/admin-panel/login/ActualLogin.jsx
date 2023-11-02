@@ -18,7 +18,7 @@ const ActualLogin = () => {
     if (userInfo && token && userInfo?.role === 'admin') {
       router.push('/admin-panel/dashboard')
     }
-  }, [userInfo, token])
+  }, [userInfo, token, router])
 
   const {
     register,
