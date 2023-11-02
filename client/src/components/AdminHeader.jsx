@@ -1,6 +1,7 @@
 'use client'
 
 import { setToken, setUsers } from '@/store/reducers/userReducer'
+import Image from 'next/image'
 import { redirect, useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { HiSearch } from 'react-icons/hi'
@@ -48,12 +49,16 @@ const AdminHeader = () => {
         />
       </div>
       <div className="flex justify-center items-center relative">
-        <img
-          src={`/images/crypto.png`}
-          alt="Profile"
-          className="w-10 h-10 rounded-full object-cover cursor-pointer"
-          onClick={() => setShow((prev) => !prev)}
-        />
+        <div className="w-10">
+          <Image
+            src={`/images/crypto.png`}
+            alt="Profile"
+            className="h-10 rounded-full object-cover cursor-pointer"
+            width={100}
+            height={100}
+            onClick={() => setShow((prev) => !prev)}
+          />
+        </div>
         <div className="w-[104px] right-[20%] top-[90%] text-center absolute">
           {show && (
             <button

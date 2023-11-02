@@ -29,42 +29,46 @@ const Header = ({ className }) => {
   }
 
   useEffect(() => {
-    const controlNavbar = () => {
-      if (window.scrollY > 200) {
-        if (window.scrollY > lastScrollY) {
-          setShow('hide')
+    if (!shouldHideHeader) {
+      const controlNavbar = () => {
+        if (window.scrollY > 200) {
+          if (window.scrollY > lastScrollY) {
+            setShow('hide')
+          } else {
+            setShow('show')
+          }
         } else {
-          setShow('show')
+          setShow('top')
         }
-      } else {
-        setShow('top')
+        setLastScrollY(window.scrollY)
       }
-      setLastScrollY(window.scrollY)
-    }
 
-    window.addEventListener('scroll', controlNavbar)
-    return () => {
-      window.removeEventListener('scroll', controlNavbar)
+      window.addEventListener('scroll', controlNavbar)
+      return () => {
+        window.removeEventListener('scroll', controlNavbar)
+      }
     }
-  }, [lastScrollY])
+  }, [lastScrollY, shouldHideHeader])
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 1280) {
-        setIsSmallScreen(true)
-      } else {
-        setIsSmallScreen(false)
+    if (!shouldHideHeader) {
+      const handleResize = () => {
+        if (window.innerWidth < 1280) {
+          setIsSmallScreen(true)
+        } else {
+          setIsSmallScreen(false)
+        }
+        if (window.innerWidth < 640) {
+          setIconSize(8)
+        } else {
+          setIconSize(0)
+        }
       }
-      if (window.innerWidth < 640) {
-        setIconSize(8)
-      } else {
-        setIconSize(0)
-      }
+      handleResize()
+      window.addEventListener('resize', handleResize)
+      return () => window.removeEventListener('resize', handleResize)
     }
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
+  }, [shouldHideHeader])
 
   const handleNavigation = () => {
     setShowNav((prev) => !prev)
