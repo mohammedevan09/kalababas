@@ -423,6 +423,11 @@ button > span {
   font-weight: bold !important;
 }
 
+.S9gUrf-YoZ4jf {
+  display: flex !important;
+  justify-content: center !important;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }

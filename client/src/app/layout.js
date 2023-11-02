@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ReduxProvider from '@/store/ReduxProvider'
 import { Toaster } from 'react-hot-toast'
+import GoogleOAuthProviderLayout from '@/store/GoogleOAuthProviderLayout'
 
 const teko = Teko({ subsets: ['latin'] })
 const ws = Work_Sans({ subsets: ['latin'] })
@@ -19,12 +20,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={teko.className}>
         <ReduxProvider>
-          <div className={`font-semibold ${ws.className}`}>
-            <Toaster />
-          </div>
-          <Header />
-          {children}
-          <Footer />
+          <GoogleOAuthProviderLayout>
+            <div className={`font-semibold ${ws.className}`}>
+              <Toaster />
+            </div>
+            <Header />
+            {children}
+            <Footer />
+          </GoogleOAuthProviderLayout>
         </ReduxProvider>
       </body>
     </html>

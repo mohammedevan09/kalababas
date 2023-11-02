@@ -1,4 +1,7 @@
-import GoogleLogin, { GoogleLogout } from 'react-google-login'
+'use client'
+
+import { GoogleLogin } from '@react-oauth/google'
+import { FcGoogle } from 'react-icons/fc'
 
 export const GoogleLoginButton = ({
   responseSuccessGoogle,
@@ -6,22 +9,21 @@ export const GoogleLoginButton = ({
 }) => {
   return (
     <GoogleLogin
-      clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}
-      buttonText="Login with Google to Rate"
+      text="Login with Google to Rate"
       onSuccess={responseSuccessGoogle}
-      onFailure={responseFailureGoogle}
-      cookiePolicy={'single_host_origin'}
-      isSignedIn={true}
+      onError={responseFailureGoogle}
     />
   )
 }
 
 export const GoogleLogoutButton = ({ logoutSuccess }) => {
   return (
-    <GoogleLogout
-      clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}
-      buttonText="Logout"
-      onLogoutSuccess={logoutSuccess}
-    />
+    <button
+      onClick={logoutSuccess}
+      className="flex justify-center items-center gap-2 bg-white py-2 px-3 text-black rounded-md text-lg font-semibold
+      "
+    >
+      <FcGoogle size={23} /> Logout
+    </button>
   )
 }

@@ -5,18 +5,18 @@ import RatingsCard from '@/components/RatingsCard'
 import Title from '@/components/Title'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import ResponsivePagination from 'react-responsive-pagination'
 import toast from 'react-hot-toast'
 import {
   GoogleLoginButton,
   GoogleLogoutButton,
 } from '@/components/LoginAndLogoutBtn'
-import { gapi } from 'gapi-script'
 import { createUser } from '@/api/userApi'
 import { useDispatch, useSelector } from 'react-redux'
 import { setUsers } from '@/store/reducers/userReducer'
 import Modal from './RatingModel'
+import { jwtDecode } from 'jwt-decode'
 
 const RatingsToShow = ({ data, totalCount }) => {
   const totalPages = Math.ceil(totalCount?.totalData / 12)
@@ -33,20 +33,29 @@ const RatingsToShow = ({ data, totalCount }) => {
   }
 
   const responseSuccessGoogle = (response) => {
+    const decoded = jwtDecode(response?.credential)
     if (!Object.keys(userInfo).length) {
       createUser({
-        email: response?.profileObj?.email,
-        fullName: response?.profileObj?.name,
-        password: response?.profileObj?.googleId,
-        image: response?.profileObj?.imageUrl,
+        email: decoded?.email,
+        fullName: decoded?.name,
+        password: decoded?.exp,
+        image: decoded?.picture,
       }).then((data) => {
-        dispatch(setUsers(data))
+        dispatch(
+          setUsers({
+            email: decoded?.email,
+            fullName: decoded?.name,
+            password: decoded?.exp,
+            image: decoded?.picture,
+          })
+        )
         toast.success('Logged In successfully!')
       })
     }
   }
 
   const responseFailureGoogle = (response) => {
+    console.log(response)
     toast.error('Sorry! Login failed!')
   }
 
@@ -54,16 +63,6 @@ const RatingsToShow = ({ data, totalCount }) => {
     dispatch(setUsers({}))
     toast.success('Logged out successfully!')
   }
-
-  useEffect(() => {
-    function start() {
-      gapi.client.init({
-        clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
-        scope: '',
-      })
-    }
-    gapi.load('client:auth2', start)
-  }, [])
 
   return (
     <>
