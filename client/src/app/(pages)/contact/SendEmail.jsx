@@ -25,10 +25,9 @@ const SendEmail = () => {
     sendAnEmail({
       ...formData,
       subject: 'An Email from crypto.kalababas.com',
-    }).then(() => {
-      reset()
-      toast.success('Thanks For Contacting with us!')
-    })
+    }).then(() => {})
+    toast.success('Thanks For Contacting with us!')
+    reset()
   }
 
   return (
