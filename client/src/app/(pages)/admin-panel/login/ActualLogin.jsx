@@ -63,7 +63,7 @@ const SignUp = ({
   router,
 }) => {
   const handleClick = (formData) => {
-    console.log(formData)
+    // console.log(formData)
     if (isValid) {
       adminLogin(formData)
         .then((data) => {

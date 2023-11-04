@@ -15,12 +15,7 @@ const router = express.Router()
 router.get('/totalCount', totalResultsCount)
 router.post('/', createResults)
 router.put('/:id', updateResults)
-router.put(
-  '/upload/:id',
-  uploadPhoto.array('images', 10),
-  ImgResize,
-  uploadImages
-)
+router.put('/upload/:id', uploadPhoto.array('images', 10), uploadImages)
 router.delete('/:id', deleteResults)
 router.get('/:id', getResults)
 router.get('/', getallResults)

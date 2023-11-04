@@ -78,25 +78,18 @@ export const uploadImages = asyncHandler(async (req, res) => {
   const { id } = req.params
 
   try {
-    const uploader = (path) => cloudinaryUploadImg(path, 'images')
-    const urls = []
-    const files = req.files
-    for (const file of files) {
-      const { path } = file
-      const newPath = await uploader(path)
-      urls.push(newPath)
-      fs.unlinkSync(path)
-    }
+    const uploaded = await cloudinaryUploadImg(req.files[0]?.path)
 
     const findResults = await Results.findByIdAndUpdate(
       id,
       {
-        image: urls,
+        image: uploaded,
       },
       {
         new: true,
       }
     )
+    fs.unlinkSync(req.files[0]?.path)
     return res.status(200).json(findResults)
   } catch (error) {
     throw new Error(error)

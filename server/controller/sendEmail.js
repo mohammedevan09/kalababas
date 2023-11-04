@@ -15,21 +15,21 @@ let transporter = nodemailer.createTransport({
 })
 
 const sendEmail = expressAsyncHandler(async (req, res) => {
-  const { email, subject, message } = req.body
-  console.log(email, subject, message)
+  const { email, subject, message, number } = req.body
+  // console.log(email, subject, message)
 
   var mailOptions = {
     from: email,
     to: process.env.SMTP_MAIL,
     subject: subject,
-    text: message + ' || ' + email,
+    text: message + ' || ' + email + ' || ' + number,
   }
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      return console.log(error)
+      return res.send(500).json(error)
     } else {
-      return console.log('Email sent successfully!')
+      return res.send(200).json('Email sent successfully!')
     }
   })
 })

@@ -36,12 +36,14 @@ export const ImgResize = async (req, res, next) => {
   await Promise.all(
     req.files.map(async (file) => {
       const processedFilePath = `public/images/processed_${file.filename}`
+      console.log(processedFilePath)
       await sharp(file.path)
         .resize(300, 300)
         .toFormat('jpeg')
         .jpeg({ quality: 90 })
         .toFile(processedFilePath)
       fs.unlinkSync(path.join(file.path, '../../../', processedFilePath))
+      console.log(path.join(file.path, '../../../', processedFilePath))
     })
   )
   next()

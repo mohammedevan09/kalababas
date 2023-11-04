@@ -39,6 +39,7 @@ const AddNewResults = () => {
     register,
     handleSubmit,
     formState: { errors, isValid },
+    reset,
   } = useForm({
     defaultValues: {
       title: '',
@@ -59,6 +60,7 @@ const AddNewResults = () => {
       const formData = new FormData()
       formData.append('images', image)
       await uploadResultsImage(newData?._id, formData, token)
+      reset()
       toast.success('Uploaded successfully!')
     }
     setImage(null)

@@ -2,6 +2,7 @@ import { AiTwotonePhone } from 'react-icons/ai'
 import { FaAddressCard } from 'react-icons/fa'
 import { BsFacebook, BsTwitter, BsTelegram } from 'react-icons/bs'
 import { BiLogoGmail } from 'react-icons/bi'
+import SendEmail from './SendEmail'
 
 const page = () => {
   const social = [
@@ -28,72 +29,7 @@ const page = () => {
       </div>
 
       <div className="md:flex grid justify-evenly items-start gap-10 sm:px-0 px-7">
-        <form className="sm:w-[400px] w-[350px]">
-          <h2 className="sm:text-4xl text-3xl font-semibold mb-3 mx-auto text-center">
-            Contact
-          </h2>
-          <label
-            htmlFor="name"
-            className="block mb-1 text-md font-medium text-gray-900 dark:text-white"
-          >
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            className="mb-3 text-white text-md outline-none block w-full p-2.5 bg-[black] border-b border-indigo-600 tracking-wider"
-            placeholder="Valo Manush"
-          />
-          <label
-            htmlFor="email"
-            className="block mb-1 text-md font-medium text-gray-900 dark:text-white"
-          >
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            className="mb-3 text-white text-md outline-none block w-full p-2.5 bg-[black] border-b border-indigo-600"
-            placeholder="name@email.com"
-          />
-          <label
-            htmlFor="phoneNo"
-            className="block mb-1 text-md font-medium text-gray-900 dark:text-white"
-          >
-            Mobile Number
-          </label>
-          <input
-            type="number"
-            id="phoneNo"
-            className="mb-3 text-white text-md outline-none block w-full p-2.5 bg-[black] border-b border-indigo-600"
-            placeholder="+00 xxxxxxxx"
-          />
-          <label
-            htmlFor="comment"
-            className="block mb-1 text-md font-medium text-gray-900 dark:text-white"
-          >
-            Comment
-          </label>
-          <textarea
-            type="text"
-            id="comment"
-            className="mb-3 text-white text-md outline-none block w-full p-2.5 bg-[black] border border-indigo-600"
-            placeholder="I am happy with this website!"
-          />
-          <p
-            id="helper-text-explanation"
-            className="mt-2 text-md text-gray-500 dark:text-gray-400"
-          >
-            We’ll never share your details. Read our{' '}
-            <a
-              href="#"
-              className="font-medium text-blue-600 hover:underline dark:text-blue-500"
-            >
-              Privacy Policy
-            </a>
-            .
-          </p>
-        </form>
+        <SendEmail />
         <div className="sm:w-[400px] w-[350px]">
           <div className="h-full">
             <h2 className="sm:text-4xl text-3xl font-semibold mb-3">
@@ -111,9 +47,9 @@ const page = () => {
               </a>
               <a
                 className="py-2 pl-1 flex justify-start items-center gap-3"
-                href="mailto:mohammedevan07@gmail.com"
+                href="mailto:fahadbinenam1234@gmail.com"
               >
-                <BiLogoGmail size={24} /> mohammedevan07@gmail.com
+                <BiLogoGmail size={24} /> fahadbinenam1234@gmail.com
               </a>
               <div className="flex justify-start gap-4 items-center bottom-8 ml-1">
                 {social.map((item, i) => (

@@ -82,8 +82,8 @@ const Footer = () => {
               <a className="py-1 pl-1" href="tel:017874-76134">
                 +92 315 9979825
               </a>
-              <a className="py-2 pl-1" href="mailto:mohammedevan07@gmail.com">
-                mohammedevan07@gmail.com
+              <a className="py-2 pl-1" href="mailto:fahadbinenam1234@gmail.com">
+                fahadbinenam1234@gmail.com
               </a>
               <div className="flex justify-left gap-2 items-center mb-4">
                 {social.map((item, i) => (
