@@ -38,7 +38,11 @@ const OneResults = ({ results, formattedDate }) => {
       </div>
       <div className="w-full text-center">
         <Image
-          src={results?.image[0]?.url}
+          src={
+            results?.image[0]?.url ||
+            results?.image?.url ||
+            '/images/trade1.jpg'
+          }
           alt="results"
           width={1400}
           height={1400}
