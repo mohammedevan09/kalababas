@@ -31,7 +31,13 @@ export const deleteResults = asyncHandler(async (req, res) => {
   const { id } = req.params
   try {
     const deletedResults = await Results.findByIdAndDelete(id)
-    await cloudinaryDeleteImg(deletedResults?.image?.public_id[0], 'images')
+    await cloudinaryDeleteImg(
+      deletedResults?.image?.public_id[0]?.length < 3
+        ? deletedResults?.image?.public_id
+        : deletedResults?.image?.public_id[0],
+      'images'
+    )
+
     res.status(200).json(deletedResults)
   } catch (error) {
     throw new Error(error)

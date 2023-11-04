@@ -88,7 +88,7 @@ const ResultGrid = ({ data, totalCount }) => {
             headerName: 'Image',
             flex: 0.1,
             renderCell: (params) => {
-              const imageUrl = params.value && params.value[0]?.url
+              const imageUrl = params.value[0]?.url || params?.value?.url
               return (
                 <Image
                   src={imageUrl}
