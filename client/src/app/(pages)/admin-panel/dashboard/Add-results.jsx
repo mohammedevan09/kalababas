@@ -60,8 +60,8 @@ const AddNewResults = () => {
       formData.append('images', image)
       await uploadResultsImage(newData?._id, formData, token)
       toast.success('Uploaded successfully!')
-      setImage(null)
     }
+    setImage(null)
   }
   return (
     <>

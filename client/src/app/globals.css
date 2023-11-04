@@ -339,6 +339,11 @@ svg.css-tj5bde-Svg {
   display: block !important;
 }
 
+.MuiDataGrid-root.MuiDataGrid-root--densityStandard.MuiDataGrid-withBorderColor.css-aop0yh {
+  border: none !important;
+  color: white !important;
+}
+
 /* Ratings */
 
 .swiper {
