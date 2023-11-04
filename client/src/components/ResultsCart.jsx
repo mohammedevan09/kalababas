@@ -58,7 +58,7 @@ const ResultsCart = ({ item }) => {
     >
       <figure className="w-full cursor-pointer">
         <Image
-          src={item?.image[0]?.url}
+          src={item?.image[0]?.url || item?.image?.url || '/images/crypto.jpg'}
           alt="category"
           width={1000}
           height={1000}
