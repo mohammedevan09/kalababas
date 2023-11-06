@@ -28,7 +28,7 @@ const page = () => {
         <div className="w-full h-1 rounded-md bg-white mt-1"></div>
       </div>
 
-      <div className="md:flex grid justify-evenly items-start gap-10 sm:px-0 px-7">
+      <div className="md:flex grid justify-evenly items-start gap-10 sm:px-0 px-7 w-screen">
         <SendEmail />
         <div className="sm:w-[400px] w-[350px]">
           <div className="h-full">
