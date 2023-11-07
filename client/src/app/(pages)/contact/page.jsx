@@ -37,20 +37,13 @@ const page = () => {
             </h2>
             <div className="grid items-center justify-left gap-4">
               <p className="py-2 pl-1 flex justify-start items-center gap-3">
-                <FaAddressCard size={24} /> Agrabad, Chattogram, Bangladesh
+                <FaAddressCard size={24} /> Mauritius
               </p>
               <a
-                className="py-1 pl-1 flex justify-start items-center gap-3"
-                href="tel:017874-76134"
-              >
-                <AiTwotonePhone size={24} />
-                +880 1905-248476
-              </a>
-              <a
                 className="py-2 pl-1 flex justify-start items-center gap-3"
-                href="mailto:fahadbinenam1234@gmail.com"
+                href="mailto:kalababascryptoworld@gmail.com"
               >
-                <BiLogoGmail size={24} /> fahadbinenam1234@gmail.com
+                <BiLogoGmail size={24} /> kalababascryptoworld@gmail.com
               </a>
               <div className="flex justify-start gap-4 items-center bottom-8 ml-1">
                 {social.map((item, i) => (

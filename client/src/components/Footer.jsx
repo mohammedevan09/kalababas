@@ -80,10 +80,13 @@ const Footer = () => {
                 Join Our Telegram Channel
               </Link>
               <a className="py-1 pl-1" href="tel:017874-76134">
-                +92 315 9979825
+                Mauritius
               </a>
-              <a className="py-2 pl-1" href="mailto:fahadbinenam1234@gmail.com">
-                fahadbinenam1234@gmail.com
+              <a
+                className="py-2 pl-1"
+                href="mailto:kalababascryptoworld@gmail.com"
+              >
+                kalababascryptoworld@gmail.com
               </a>
               <div className="flex justify-left gap-2 items-center mb-4">
                 {social.map((item, i) => (
