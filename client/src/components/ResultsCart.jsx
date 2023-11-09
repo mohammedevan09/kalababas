@@ -91,8 +91,8 @@ const ResultsCart = ({ item }) => {
         </h2>
         <p className="break-word 2xl:text-[14px] text-[12px] sm:inline-block hidden mb-3 text-gray-300">
           {' '}
-          {item?.description?.length >= 95 ? (
-            <>{item?.description?.substring(0, 94)}...</>
+          {item?.description?.length >= 90 ? (
+            <>{item?.description?.substring(0, 87)}...</>
           ) : (
             <>
               {item?.description + ' '}
@@ -100,7 +100,7 @@ const ResultsCart = ({ item }) => {
                 className="text-[transparent]"
                 style={{ userSelect: 'none' }}
               >
-                {'0'.repeat(97 - item?.description?.length)}
+                {` `.repeat(89 - item?.description?.length)}
               </span>
             </>
           )}
