@@ -24,12 +24,13 @@ const Landing = () => {
           </div>
 
           <div className="xl:text-3xl lg:text-xl md:text-md text-sm text-gray-200 gradient-text-secondary">
-            Welcome to KalababaS Crypto World! Since 2018, we&comma;ve been
-            immersed in the dynamic cryptocurrency market. Now, we&comma;re
-            thrilled to share our expertise with you. At kalababas.com,
-            we&comma;re a community on Telegram offering accurate crypto signals
-            for learning and earning. Join us to explore the world of
-            cryptocurrencies together and seize opportunities with confidence.
+            Welcome to KalababaS Crypto World! We are a community of
+            cryptocurrency enthusiasts who have been actively involved in the
+            dynamic cryptocurrency market since 2018. Our Telegram community,
+            crypto.kalababas.com, offers accurate crypto signals for learning
+            and earning. Join us to explore the world of cryptocurrencies
+            together and seize opportunities with confidence. We are excited to
+            have you onboard!
           </div>
           <Link
             href={'https://t.me/+XnWElDg4m_k1ODg9'}

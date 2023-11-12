@@ -34,13 +34,14 @@ const AboutUs = () => {
           </div>
 
           <div className="xl:text-3xl lg:text-xl text-md gradient-text-secondary md:text-justify text-center md:mx-0 mx-[1.20rem]">
-            Our signals have demonstrated remarkable profitability, as evidenced
-            by our consistently impressive monthly results. Whether you&comma;re
-            a seasoned trader or a newcomer stepping into the world of trading,
-            becoming a part of our Channel offers you more than just the chance
-            to earn substantial profits. It&comma;s also a pathway to honing and
-            perfecting your trading skills, no matter where you are on your
-            trading journey.
+            Our trading signals have been consistently profitable, which means
+            that they have been successful in the past. Whether you are an
+            experienced trader or new to the world of trading, joining our
+            channel offers you more than just the chance to earn substantial
+            profits. It is also a pathway to honing and perfecting your trading
+            skills, no matter where you are on your trading journey. We welcome
+            you to join our community and explore the world of cryptocurrencies
+            with us!
           </div>
         </div>
       </div>

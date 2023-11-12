@@ -147,8 +147,9 @@ const SendEmail = () => {
       </p>
       <button
         type="submit"
-        className="btn bg-white text-black mt-6 mb-[1rem] block w-full mx-auto text-2xl font-semibold py-2 hover:bg-black hover:text-white transition-all duration-300 hover:border border-white rounded-md"
+        className="btn bg-white text-black mt-6 mb-[1rem] block w-full mx-auto text-2xl font-semibold py-2 hover:bg-black hover:text-white transition-all duration-300 hover:border border-white rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
         onClick={handleSubmit(handleClick)}
+        disabled={!isValid}
       >
         Submit
       </button>
