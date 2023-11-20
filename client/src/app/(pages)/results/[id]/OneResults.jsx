@@ -33,7 +33,7 @@ const OneResults = ({ results, formattedDate }) => {
       >
         <BsArrowLeftCircle size={24} /> Go Back To results
       </Link>
-      <div className="md:text-xl text-[16px] font-semibold">
+      <div className="md:text-2xl text-[18px] font-semibold">
         {results?.title}
       </div>
       <div className="w-full text-center">
