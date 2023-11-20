@@ -77,9 +77,7 @@ const ResultsCart = ({ item }) => {
                 : 'bg-black'
             }`}
           >
-            {isNewBlog(item?.createdAt)
-              ? 'New'
-              : `${getDaysAgo(item?.createdAt)} days ago`}
+            {isNewBlog(item?.createdAt) ? 'New' : ``}
           </div>
         </div>
         <h2 className="break-word 2xl:text-[18px] text-[14px] sm:flex grid mb-2  font-semibold">
